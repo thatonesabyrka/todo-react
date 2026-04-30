@@ -1,5 +1,5 @@
-export const Button = () => {
+export const Button = ({ className = '', type = 'button', children }) => {
   return (
-    <button className="button" type="submit">Add</button>
+    <button className={`button ${className}`} type={type}>{children}</button>
   )
 }
