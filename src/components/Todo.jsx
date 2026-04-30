@@ -13,7 +13,11 @@ export const Todo = () => {
   const [newTaskTitle, setNewTaskTitle] = useState('')
 
   const deleteAllTasks = () => {
-    console.log('Delete all tasks')
+    const isConfirmed = confirm('Are you sure you want to delete all tasks?')
+
+    if (isConfirmed) {
+      setTasks([])
+    }
   }
 
   const deleteTask = (taskId) => {
