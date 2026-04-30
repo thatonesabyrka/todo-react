@@ -4,7 +4,7 @@ import { Button } from './Button'
 export const AddTaskForm = () => {
   return (
     <form className="todo__form">
-      <Field />
+      <Field className="todo__field" id="new-task" label="New task title" />
       <Button />
     </form>
   )
