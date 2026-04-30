@@ -1,6 +1,6 @@
 import { TodoItem } from './TodoItem'
 
-export const TodoList = () => {
+export const TodoList = ({ tasks = [] }) => {
   const hasTasks = true
 
   if (!hasTasks) {
@@ -9,8 +9,9 @@ export const TodoList = () => {
 
   return (
     <ul className="todo__list">
-      <TodoItem className="todo__item" id="task-1" title="Купить молоко" isDone={false} />
-      <TodoItem className="todo__item" id="task-2" title="Погладить кота" isDone />
+      {tasks.map(task => (
+        <TodoItem className="todo__item" key={task.id} {...task} />
+      ))}
     </ul>
   )
 }
