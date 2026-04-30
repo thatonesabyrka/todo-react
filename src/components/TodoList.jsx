@@ -1,6 +1,6 @@
 import { TodoItem } from './TodoItem'
 
-export const TodoList = ({ tasks = [] }) => {
+export const TodoList = ({ tasks = [], onDeleteTaskButtonClick, onTaskCompleteChange }) => {
   const hasTasks = true
 
   if (!hasTasks) {
@@ -10,7 +10,13 @@ export const TodoList = ({ tasks = [] }) => {
   return (
     <ul className="todo__list">
       {tasks.map(task => (
-        <TodoItem className="todo__item" key={task.id} {...task} />
+        <TodoItem
+          className="todo__item"
+          key={task.id}
+          onDeleteTaskButtonClick={onDeleteTaskButtonClick}
+          onTaskCompleteChange={onTaskCompleteChange}
+          {...task}
+        />
       ))}
     </ul>
   )

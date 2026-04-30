@@ -1,4 +1,4 @@
-export const Field = ({ className = '', id, label, type = 'text' }) => {
+export const Field = ({ className = '', id, label, type = 'text', onInput }) => {
   return (
     <div className={`field ${className}`}>
       <label
@@ -13,6 +13,7 @@ export const Field = ({ className = '', id, label, type = 'text' }) => {
         placeholder=" "
         autoComplete="off"
         type={type}
+        onInput={onInput}
       />
     </div>
   )
